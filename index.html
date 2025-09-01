@@ -7,43 +7,56 @@
   <meta name="description" content="Customer Service, Healthcare, Telco, Insurance, and B2B Calling work samples by Jennelyn Tombado — VA, CSR, Appointment Setter, Canva Designer." />
   <style>
     :root {
-    --ink: #3a1f22;
-    --bg: #fff8f6;
-    --card: #fff;
-    --primary: #f1a4a4;
-    --secondary: #f1a4a4;
-    --muted: #1a0b0b;
-    --line: #180603;
-    --shadow: 0 10px 30px #180603, 0 2px 6px #180603;
-    --radius: 18px;
-}
+      --ink: #2c2c2c;       /* dark text for readability */
+      --bg: #fafaff;        /* soft lavender page background */
+      --card: #ffffff;      /* clean card surface */
+
+      --primary: #c7a4f9;   /* lilac purple */
+      --secondary: #fbb6ce; /* pastel pink */
+      --accent: #9debc9;    /* mint green */
+
+      --muted: #5b5b5b;     /* muted gray text */
+      --line: #e6dff3;      /* soft lavender borders */
+      --shadow: 0 8px 20px rgba(199, 164, 249, 0.25),
+                0 2px 8px rgba(251, 182, 206, 0.25);
+      --radius: 18px;
     }
-    *{box-sizing:border-box;scroll-behavior:smooth;}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    img{max-width:100%;display:block}
     a{color:var(--ink);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:1100px;margin:0 auto;padding:28px}
 
     /* Sticky Nav */
-    nav{position:sticky;top:0;background:var(--card);display:flex;justify-content:center;gap:20px;padding:10px;border-bottom:1px solid var(--line);z-index:1000;box-shadow:0 4px 8px rgba(0,0,0,.05);}
+    nav{position:sticky;top:0;background:var(--card);display:flex;justify-content:center;gap:20px;padding:10px;border-bottom:1px solid var(--line);z-index:1000;box-shadow:0 4px 8px rgba(0,0,0,.05)}
     nav a{font-weight:600;color:var(--ink)}
 
     /* Header/Hero */
-    header.hero{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:40px 28px;box-shadow:var(--shadow)}
+    header.hero{position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 50%,var(--accent) 100%);color:#fff;padding:40px 28px;box-shadow:var(--shadow)}
     .hero h1{margin:0 0 8px;font-size:36px;letter-spacing:.2px;color:var(--ink)}
     .hero p{margin:0;color:var(--muted)}
+
     .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .chip{background:var(--secondary);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px}
+    .chip{background:var(--secondary);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;transition:all .3s ease}
+    .chip:hover{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff}
+
     .contact{margin-top:14px;display:flex;flex-wrap:wrap;gap:16px;font-size:14px}
     .cta{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;border-radius:999px;padding:10px 14px;font-weight:700;border:none;box-shadow:var(--shadow)}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;border-radius:999px;padding:10px 14px;font-weight:700;border:none;box-shadow:var(--shadow);transition:all .3s ease}
+    .btn:hover{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;transform:translateY(-2px) scale(1.03)}
+    .btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
     .btn.secondary{background:var(--secondary);color:var(--ink)}
+    .btn.secondary:hover{background:linear-gradient(135deg,var(--secondary),var(--accent));color:#fff;transform:translateY(-2px) scale(1.03)}
 
     /* Sections */
     section{margin-top:34px}
     .section-title{display:flex;align-items:center;gap:12px;margin:0 0 8px}
     .section-title h2{margin:0;font-size:22px}
-    .section-sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+    .section-sub,.sub{color:var(--muted);font-size:14px;margin:0 0 14px}
 
     /* Grid */
     .grid{display:grid;gap:18px}
@@ -52,17 +65,22 @@
       .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     }
 
-    /* Card */
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;border:1px solid var(--line)}
+    /* Simple row/icon helpers */
+    .row{display:flex;gap:12px;align-items:flex-start}
+    .icon svg{width:24px;height:24px}
+
+    /* Card with gradient border */
+    .card{position:relative;border-radius:var(--radius);padding:18px;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--primary),var(--secondary),var(--accent)) border-box;border:2px solid transparent;box-shadow:var(--shadow)}
     .card h3{margin:0 0 6px;font-size:18px}
     .muted{color:var(--muted)}
-    .badge{display:inline-block;background:var(--secondary);color:var(--ink);padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--line)}
+    .badge{display:inline-block;background:var(--secondary);color:var(--ink);padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--line);transition:all .3s ease}
+    .badge:hover{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff}
 
     /* Timeline */
     .timeline{position:relative;padding-left:18px}
     .timeline:before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--line)}
     .t-item{position:relative;margin:0 0 14px}
-    .t-item:before{content:"";position:absolute;left:-2px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(245,166,166,.25)}
+    .t-item:before{content:"";position:absolute;left:-2px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 3px rgba(199,164,249,.25)}
     .t-head{font-weight:700}
 
     /* Footer */
@@ -72,8 +90,9 @@
   </style>
 </head>
 <body>
+
 <nav>
-  <a href="#about">About</a> 
+  <a href="#about">About</a>
   <a href="#services">Services</a>
   <a href="#samples">Samples</a>
   <a href="#design">Design</a>
@@ -81,9 +100,8 @@
   <a href="#contact">Contact</a>
 </nav>
 
-  <div class="wrap">
-  <header class="hero" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
-    
+<div class="wrap">
+  <header id="about" class="hero" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
     <!-- Left Side: Your Info -->
     <div style="flex:1; min-width:250px;">
       <h1>Jennelyn Tombado</h1>
@@ -99,199 +117,185 @@
         <span>✉️ tombadojennelyn@gmail.com</span>
         <span>📍 Philippines</span>
       </div>
-  <div class="cta">
-  <a class="btn" href="assets/files/Work Sample Scenarios.pdf" download="Work Samples Scenarios.pdf">
-    ⬇️ Work Samples — Scenarios.pdf
-  </a>
-  <a class="btn secondary" href="assets/files/Scripts.pdf" download="Scripts.pdf">
-    ⬇️ Scripts PDF
-  </a>
-</div>
-</div>
-<!-- Right Side: Profile Photo -->
-<div style="flex:0 0 auto; text-align:justify;">
-  <img src="profile.jpg.png" alt="Jennelyn Tombado"
-       style="width:200px; height:200px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1); border:4px solid #fff;">
-</div>
-</header>
-     <!-- SERVICES -->
-    <section id="services" class="section">
-      <h2>Services Offered</h2>
-      <p class="sub">End-to-end support and creative assets that move the needle.</p>
-      <div class="grid cols-3">
-        <div class="card">
-          <div class="row">
-            <div class="icon" aria-hidden="true">
-              <!-- headset icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 1 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-3v-8h5zM3 19a2 2 0 0 0 2 2h3v-8H3z"/></svg>
-            </div>
-            <div>
-              <h3>Customer Support</h3>
-              <p class="muted">Phone, email, and chat • Troubleshooting • Escalations • SLAs</p>
-            </div>
+      <div class="cta">
+        <a class="btn" href="assets/files/Work Sample Scenarios.pdf" download="Work Samples Scenarios.pdf">
+          ⬇️ Work Samples — Scenarios.pdf
+        </a>
+        <a class="btn secondary" href="assets/files/Scripts.pdf" download="Scripts.pdf">
+          ⬇️ Scripts PDF
+        </a>
+      </div>
+    </div>
+    <!-- Right Side: Profile Photo -->
+    <div style="flex:0 0 auto; text-align:center;">
+      <img src="profile.jpg.png" alt="Jennelyn Tombado" style="width:200px; height:200px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1); border:4px solid #fff;">
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="section-title"><h2>Services Offered</h2></div>
+    <p class="section-sub">End-to-end support and creative assets that move the needle.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <div class="row">
+          <div class="icon" aria-hidden="true">
+            <!-- headset icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 1 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-3v-8h5zM3 19a2 2 0 0 0 2 2h3v-8H3z"/></svg>
           </div>
-        </div>
-        <div class="card">
-          <div class="row">
-            <div class="icon" aria-hidden="true">
-              <!-- phone outbound icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.7 12.7 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.36-1.36a2 2 0 0 1 2.11-.45 12.7 12.7 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <h3>B2B Cold Calling</h3>
-              <p class="muted">Prospecting • Appointment setting • CRM updates • Follow‑ups</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="row">
-            <div class="icon" aria-hidden="true">
-              <!-- pencil/ruler icon -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l2-2a2 2 0 0 1 3 0l11 11a2 2 0 0 1 0 3l-2 2"/><path d="M14 7l3-3"/><path d="M2 22l4-1 1-4L3 17 2 22z"/></svg>
-            </div>
-            <div>
-              <h3>Canva Design</h3>
-              <p class="muted">Print & digital assets • Social posts • One‑pagers • Flyers</p>
-            </div>
+          <div>
+            <h3>Customer Support</h3>
+            <p class="muted">Phone, email, and chat • Troubleshooting • Escalations • SLAs</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- WORK SAMPLES -->
-    <section id="samples" class="section">
-      <h2>Work Samples — Scenarios</h2>
-      <p class="sub">Realistic scripts demonstrating tone, clarity, and resolution focus.</p>
-      <div class="grid cols-2">
-        <!-- CSR -->
-        <div class="card">
-          <span class="badge">CSR</span>
-          <h3>Delayed Delivery — De‑escalation & Remedy</h3>
-          <div class="sample">
-            <p class="muted"><strong>Scenario:</strong> Customer upset about a delayed product delivery.</p>
-            <p><strong>Response:</strong> “Thank you for bringing this to my attention. I understand how frustrating this delay is. I’ve coordinated with logistics—your package is scheduled for delivery tomorrow. I’ve also added a 10% discount to your next order for the inconvenience. Would you like real‑time tracking updates via email?”</p>
+      <div class="card">
+        <div class="row">
+          <div class="icon" aria-hidden="true">
+            <!-- phone outbound icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.7 12.7 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.36-1.36a2 2 0 0 1 2.11-.45 12.7 12.7 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-        </div>
-        <!-- Healthcare -->
-        <div class="card">
-          <span class="badge">Healthcare</span>
-          <h3>Pre‑Authorization — Expectation Setting</h3>
-          <div class="sample">
-            <p class="muted"><strong>Scenario:</strong> Patient needs clarification on pre‑authorization.</p>
-            <p><strong>Response:</strong> “Thanks for your patience while I review your record. Your doctor submitted the request yesterday; it’s pending approval and typically takes up to 48 hours. I’ll set a notification and send today’s coverage breakdown. Do you prefer updates by text or email?”</p>
-          </div>
-        </div>
-        <!-- Telco -->
-        <div class="card">
-          <span class="badge">Telco</span>
-          <h3>Service Outage — First‑Call Resolution</h3>
-          <div class="sample">
-            <p class="muted"><strong>Scenario:</strong> Internet service down; urgent need.</p>
-            <p><strong>Response:</strong> “I know getting you back online is critical. Diagnostics show a router connectivity error. Let’s reset together now; if the issue persists, I’ll book a technician for tomorrow at no charge. Can I confirm morning availability?”</p>
-          </div>
-        </div>
-        <!-- Insurance -->
-        <div class="card">
-          <span class="badge">Insurance</span>
-          <h3>Denied Claim — Guided Resubmission</h3>
-          <div class="sample">
-            <p class="muted"><strong>Scenario:</strong> Client received a denial notice.</p>
-            <p><strong>Response:</strong> “I’ve reviewed your claim—denied due to missing documentation. I’ll walk you through uploading the required files and resubmitting today. I’ll also monitor reprocessing and follow up with status updates. Would you like a checklist emailed now?”</p>
-          </div>
-        </div>
-        <!-- B2B -->
-        <div class="card">
-          <span class="badge">B2B Calling</span>
-          <h3>Outbound Prospecting — Demo Set</h3>
-          <div class="sample">
-            <p class="muted"><strong>Scenario:</strong> Cold outreach to book a software demo.</p>
-            <p><strong>Script:</strong> “Hi [Prospect’s Name], this is Jennelyn from [Company]. I noticed your team is focused on streamlining operations. We help teams cut admin time by ~30%. Open to a quick 15‑minute demo next week to see if this aligns with your goals?”</p>
+          <div>
+            <h3>B2B Cold Calling</h3>
+            <p class="muted">Prospecting • Appointment setting • CRM updates • Follow‑ups</p>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- GRAPHIC DESIGN GALLERY -->
-<section id="design" class="section">
-  <div class="section-title">
-    <h2>Graphic Design Gallery</h2>
-  </div>
-  <p class="section-sub">A showcase of Canva designs, branding, and marketing materials.</p>
-  
-  <div class="grid cols-3">
-    <!-- Design Sample 1 -->
-    <div class="card">
-      <img src="imagesdesign1.jpg" alt="Brand Kit Example" style="width:100%; border-radius:12px; margin-bottom:10px;">
-      <h3>Brand Kit</h3>
-      <p class="muted">Cohesive logos, color palettes, and typography for a professional brand identity.</p>
+      <div class="card">
+        <div class="row">
+          <div class="icon" aria-hidden="true">
+            <!-- pencil/ruler icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l2-2a2 2 0 0 1 3 0l11 11a2 2 0 0 1 0 3l-2 2"/><path d="M14 7l3-3"/><path d="M2 22l4-1 1-4L3 17 2 22z"/></svg>
+          </div>
+          <div>
+            <h3>Canva Design</h3>
+            <p class="muted">Print & digital assets • Social posts • One‑pagers • Flyers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK SAMPLES -->
+  <section id="samples" class="section">
+    <div class="section-title"><h2>Work Samples — Scenarios</h2></div>
+    <p class="section-sub">Realistic scripts demonstrating tone, clarity, and resolution focus.</p>
+    <div class="grid cols-2">
+      <!-- CSR -->
+      <div class="card">
+        <span class="badge">CSR</span>
+        <h3>Delayed Delivery — De‑escalation & Remedy</h3>
+        <div class="sample">
+          <p class="muted"><strong>Scenario:</strong> Customer upset about a delayed product delivery.</p>
+          <p><strong>Response:</strong> “Thank you for bringing this to my attention. I understand how frustrating this delay is. I’ve coordinated with logistics—your package is scheduled for delivery tomorrow. I’ve also added a 10% discount to your next order for the inconvenience. Would you like real‑time tracking updates via email?”</p>
+        </div>
+      </div>
+      <!-- Healthcare -->
+      <div class="card">
+        <span class="badge">Healthcare</span>
+        <h3>Pre‑Authorization — Expectation Setting</h3>
+        <div class="sample">
+          <p class="muted"><strong>Scenario:</strong> Patient needs clarification on pre‑authorization.</p>
+          <p><strong>Response:</strong> “Thanks for your patience while I review your record. Your doctor submitted the request yesterday; it’s pending approval and typically takes up to 48 hours. I’ll set a notification and send today’s coverage breakdown. Do you prefer updates by text or email?”</p>
+        </div>
+      </div>
+      <!-- Telco -->
+      <div class="card">
+        <span class="badge">Telco</span>
+        <h3>Service Outage — First‑Call Resolution</h3>
+        <div class="sample">
+          <p class="muted"><strong>Scenario:</strong> Internet service down; urgent need.</p>
+          <p><strong>Response:</strong> “I know getting you back online is critical. Diagnostics show a router connectivity error. Let’s reset together now; if the issue persists, I’ll book a technician for tomorrow at no charge. Can I confirm morning availability?”</p>
+        </div>
+      </div>
+      <!-- Insurance -->
+      <div class="card">
+        <span class="badge">Insurance</span>
+        <h3>Denied Claim — Guided Resubmission</h3>
+        <div class="sample">
+          <p class="muted"><strong>Scenario:</strong> Client received a denial notice.</p>
+          <p><strong>Response:</strong> “I’ve reviewed your claim—denied due to missing documentation. I’ll walk you through uploading the required files and resubmitting today. I’ll also monitor reprocessing and follow up with status updates. Would you like a checklist emailed now?”</p>
+        </div>
+      </div>
+      <!-- B2B -->
+      <div class="card">
+        <span class="badge">B2B Calling</span>
+        <h3>Outbound Prospecting — Demo Set</h3>
+        <div class="sample">
+          <p class="muted"><strong>Scenario:</strong> Cold outreach to book a software demo.</p>
+          <p><strong>Script:</strong> “Hi [Prospect’s Name], this is Jennelyn from [Company]. I noticed your team is focused on streamlining operations. We help teams cut admin time by ~30%. Open to a quick 15‑minute demo next week to see if this aligns with your goals?”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAPHIC DESIGN GALLERY -->
+  <section id="design" class="section">
+    <div class="section-title"><h2>Graphic Design Gallery</h2></div>
+    <p class="section-sub">A showcase of Canva designs, branding, and marketing materials.</p>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <img src="imagesdesign1.jpg" alt="Brand Kit Example" style="width:100%; border-radius:12px; margin-bottom:10px;">
+        <h3>Brand Kit</h3>
+        <p class="muted">Cohesive logos, color palettes, and typography for a professional brand identity.</p>
+      </div>
+      <div class="card">
+        <img src="imagesdesign2.jpg" alt="Social Media Template" style="width:100%; border-radius:12px; margin-bottom:10px;">
+        <h3>Social Media Templates</h3>
+        <p class="muted">Eye-catching Instagram carousels and Facebook post templates for engagement growth.</p>
+      </div>
+      <div class="card">
+        <img src="imagesdesign3.jpg" alt="Marketing Flyer" style="width:100%; border-radius:12px; margin-bottom:10px;">
+        <h3>Marketing Flyers</h3>
+        <p class="muted">Creative print-ready flyers for events and promotions.</p>
+      </div>
     </div>
 
-    <!-- Design Sample 2 -->
-    <div class="card">
-      <img src="imagesdesign2.jpg" alt="Social Media Template" style="width:100%; border-radius:12px; margin-bottom:10px;">
-      <h3>Social Media Templates</h3>
-      <p class="muted">Eye-catching Instagram carousels and Facebook post templates for engagement growth.</p>
-    </div>
-
-    <!-- Design Sample 3 -->
-    <div class="card">
-      <img src="imagesdesign3.jpg" alt="Marketing Flyer" style="width:100%; border-radius:12px; margin-bottom:10px;">
-      <h3>Marketing Flyers</h3>
-      <p class="muted">Creative print-ready flyers for events and promotions.</p>
-    </div>
-  </div>
-
-  <p style="margin-top:18px;">
-    <a class="btn" href="Graphic_Design_Portfolio.pdf" download>
+    <p style="margin-top:18px;">
+      <a class="btn" href="assets/files/Graphic_Design_Portfolio.pdf" download>
         📂 Download Portfolio
-    </a>
-</p>
-</section>
-
-<!-- RESUME DOWNLOAD -->
-<section id="resume" class="section">
-  <div class="section-title">
-    <h2>My Resume</h2>
-  </div>
-  <p class="section-sub">Download my full resume to see a detailed overview of my experience and skills.</p>
-  <div class="card" style="text-align:center;">
-    <p class="muted">Click below to view or download my resume.</p>
-    <a class="btn" href="Jennelyn Tombado Resume.pdf" target="_blank" download>
-      📄 Download Resume
-    </a>
-  </div>
-</section>
-<!-- CONTACT SECTION -->
-<section id="contact" class="section">
-  <div class="section-title">
-    <h2>Contact Me</h2>
-  </div>
-  <p class="section-sub">Let’s connect! Reach out for collaborations, projects, or inquiries.</p>
-  
-  <div class="card" style="text-align:center;">
-    <p class="muted">You can reach me through any of the following:</p>
-    <p>
-      📞 <a href="tel:+639813345394">+63-981-334-5394</a><br>
-      ✉️ <a href="mailto:tombadojennelyn@gmail.com">tombadojennelyn@gmail.com</a><br>
-      📍 Philippines
+      </a>
     </p>
-    <hr style="margin:18px 0; border:0; border-top:1px solid var(--line);">
-    <h3 style="margin-bottom:12px;">Send a Message</h3>
-    <form action="mailto:tombadojennelyn@gmail.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:400px; margin:0 auto;">
-      <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:8px; border:1px solid var(--line);">
-      <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:8px; border:1px solid var(--line);">
-      <textarea name="message" placeholder="Your Message" rows="4" required style="padding:10px; border-radius:8px; border:1px solid var(--line);"></textarea>
-      <button type="submit" class="btn">📩 Send</button>
-    </form>
-  </div>
-</section>
+  </section>
 
+  <!-- RESUME DOWNLOAD -->
+  <section id="resume" class="section">
+    <div class="section-title"><h2>My Resume</h2></div>
+    <p class="section-sub">Download my full resume to see a detailed overview of my experience and skills.</p>
+    <div class="card" style="text-align:center;">
+      <p class="muted">Click below to view or download my resume.</p>
+      <a class="btn" href="Jennelyn Tombado Resume.pdf" target="_blank" download>
+        📄 Download Resume
+      </a>
+    </div>
+  </section>
 
-    <footer>
-      © 2025 Jennelyn Tombado
-    </footer>
-  </div>
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="section-title"><h2>Contact Me</h2></div>
+    <p class="section-sub">Let’s connect! Reach out for collaborations, projects, or inquiries.</p>
+
+    <div class="card" style="text-align:center;">
+      <p class="muted">You can reach me through any of the following:</p>
+      <p>
+        📞 <a href="tel:+639813345394">+63-981-334-5394</a><br>
+        ✉️ <a href="mailto:tombadojennelyn@gmail.com">tombadojennelyn@gmail.com</a><br>
+        📍 Philippines
+      </p>
+      <hr style="margin:18px 0; border:0; border-top:1px solid var(--line);">
+      <h3 style="margin-bottom:12px;">Send a Message</h3>
+      <form action="mailto:tombadojennelyn@gmail.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:400px; margin:0 auto;">
+        <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:8px; border:1px solid var(--line);">
+        <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:8px; border:1px solid var(--line);">
+        <textarea name="message" placeholder="Your Message" rows="4" required style="padding:10px; border-radius:8px; border:1px solid var(--line);"></textarea>
+        <button type="submit" class="btn">📩 Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>© 2025 Jennelyn Tombado</footer>
+</div>
+
 </body>
 </html>
-
-
